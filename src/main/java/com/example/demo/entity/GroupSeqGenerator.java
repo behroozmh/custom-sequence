@@ -1,18 +1,23 @@
 package com.example.demo.entity;
 
+import com.example.demo.config.Dashboard;
 import org.hibernate.MappingException;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.hibernate.id.SequenceGenerator;
 import org.hibernate.internal.util.config.ConfigurationHelper;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.type.Type;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.Serializable;
 import java.util.Properties;
 
+
 public class GroupSeqGenerator extends SequenceGenerator {
-    private static String PREFIX_PARAM = "";
-    private static Integer SEQ_DEFAULT_VALUE = 100;
+    @Autowired
+    private Dashboard dashboard;
+    private String PREFIX_PARAM = "";
+    private Integer SEQ_DEFAULT_VALUE = 100;
 
     private Long prefixValueLong;
     private Integer prefixValueInt;
