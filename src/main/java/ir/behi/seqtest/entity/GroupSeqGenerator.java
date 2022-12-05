@@ -34,7 +34,8 @@ public class GroupSeqGenerator extends SequenceGenerator {
 
     @Override
     public void configure(Type type, Properties params, ServiceRegistry serviceRegistry) throws MappingException {
-        this.SEQ_DEFAULT_VALUE = Integer.valueOf(dashboard.getSeqStart());
+//        this.SEQ_DEFAULT_VALUE = Integer.valueOf(dashboard.getSeqStart());
+        this.SEQ_DEFAULT_VALUE = Integer.valueOf(dashboard.getSeqGenStart());
         super.configure(type, params, serviceRegistry);
         try {
             prefixValueLong = ConfigurationHelper.getLong(PREFIX_PARAM, params, SEQ_DEFAULT_VALUE);
