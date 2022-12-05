@@ -1,6 +1,6 @@
-package com.example.demo;
+package ir.behi.seqtest;
 
-import com.example.demo.config.Dashboard;
+import ir.behi.seqtest.config.Dashboard;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-public class DemoApplication {
+public class SeqApplication {
 
     @Autowired
     private Dashboard dashboard;
@@ -21,7 +21,7 @@ public class DemoApplication {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
+        SpringApplication.run(SeqApplication.class, args);
     }
 
 

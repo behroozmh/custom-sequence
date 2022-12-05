@@ -1,6 +1,6 @@
-package com.example.demo.entity;
+package ir.behi.seqtest.entity;
 
-import com.example.demo.config.Dashboard;
+import ir.behi.seqtest.config.Dashboard;
 import org.hibernate.MappingException;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.hibernate.id.SequenceGenerator;
@@ -12,12 +12,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.io.Serializable;
 import java.util.Properties;
 
-
 public class GroupSeqGenerator extends SequenceGenerator {
     @Autowired
     private Dashboard dashboard;
+
     private String PREFIX_PARAM = "";
-    private Integer SEQ_DEFAULT_VALUE = 100;
+    private Integer SEQ_DEFAULT_VALUE;
 
     private Long prefixValueLong;
     private Integer prefixValueInt;
@@ -34,6 +34,7 @@ public class GroupSeqGenerator extends SequenceGenerator {
 
     @Override
     public void configure(Type type, Properties params, ServiceRegistry serviceRegistry) throws MappingException {
+        this.SEQ_DEFAULT_VALUE = Integer.valueOf(dashboard.getSeqStart());
         super.configure(type, params, serviceRegistry);
         try {
             prefixValueLong = ConfigurationHelper.getLong(PREFIX_PARAM, params, SEQ_DEFAULT_VALUE);

@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package ir.behi.seqtest.entity;
 
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
@@ -12,11 +12,11 @@ import javax.persistence.Id;
 @Data
 public class GroupEntity {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_seq")
-    @GenericGenerator(name = "id_seq", strategy = "com.example.demo.entity.GroupSeqGenerator"
+    @GenericGenerator(name = "id_seq", strategy = "ir.behi.seqtest.entity.GroupSeqGenerator"
             , parameters = {
             @org.hibernate.annotations.Parameter(name = GroupSeqGenerator.SEQUENCE, value = "group_seq"),
     })
     @Id
-    private Integer id;
+    private Long id;
     private String name;
 }

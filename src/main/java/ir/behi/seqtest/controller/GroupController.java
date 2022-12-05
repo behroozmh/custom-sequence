@@ -1,7 +1,7 @@
-package com.example.demo.controller;
+package ir.behi.seqtest.controller;
 
-import com.example.demo.entity.GroupEntity;
-import com.example.demo.repo.GroupDAO;
+import ir.behi.seqtest.entity.GroupEntity;
+import ir.behi.seqtest.repo.GroupDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
